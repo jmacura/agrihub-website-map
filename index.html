@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>P4A web - HS Layers</title>
+  <title>Agrihub - HS Layers</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -15,50 +15,32 @@
 
 <script>
     window.HSL_PATH = 'https://unpkg.com/hslayers-ng@1.24.3/dist/';
+
     function getLRUser() {
       return (0);
     }
+
     function styleFunction(feature, resolution) {
-      if (
-        feature &&
-        feature.get('isFounder') &&
-        feature.get('isFounder') === 'yes'
-      ) {
-        // Green circle for founding members
-        return new ol.style.Style({
-          image: new ol.style.Circle({
-            fill: new ol.style.Fill({
-              color: 'rgba(128, 255, 128, 0.2)',
-            }),
-            stroke: new ol.style.Stroke({
-              color: '#77e405',
-              width: 4,
-            }),
-            radius: 6,
+      return new ol.style.Style({
+        image: new ol.style.Circle({
+          fill: new ol.style.Fill({
+            color: 'rgba(128, 128, 255, 0.2)',
           }),
-        });
-      } else {
-        // Orange circle for regular members
-        return new ol.style.Style({
-          image: new ol.style.Circle({
-            fill: new ol.style.Fill({
-              color: 'rgba(255, 128, 128, 0.2)',
-            }),
-            stroke: new ol.style.Stroke({
-              color: '#e49905',
-              width: 4,
-            }),
-            radius: 6,
+          stroke: new ol.style.Stroke({
+            color: '#32a4c9',
+            width: 4,
           }),
-        });
-      }
+          radius: 6,
+        }),
+      });
     }
+
     function hslayersNgConfig(ol) {
       return {
         sizeMode: 'container',
         sidebarClosed: true,
         useIsolatedBootstrap: true,
-        useProxy: true,
+        useProxy: false,
         //proxyPrefix: "/proxy/",
         popUpDisplay: 'click',
         componentsEnabled: {
@@ -81,7 +63,7 @@
             removable: false
           }),
           new ol.layer.Vector({
-            title: 'Partners',
+            title: 'Members',
             style: styleFunction,
             popUp: {
               attributes: [
@@ -104,12 +86,12 @@
               format: new ol.format.GeoJSON(),
               url: 'https://raw.githubusercontent.com/jmacura/p4a-website-map/master/data/Plan4All_Members.geojson'//'./data/Plan4All_Members.geojson'
             }),
-            cluster: true
+            cluster: false
           })
         ],
         default_view: new ol.View({
-          center: ol.proj.fromLonLat([-5.5, 34.5]),
-          zoom: 2,
+          center: ol.proj.fromLonLat([15.5, 50]),
+          zoom: 7.5,
           units: 'm'
         }),
         queryPoint: 'hidden'
