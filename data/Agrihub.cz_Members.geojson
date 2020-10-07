@@ -28,7 +28,7 @@
       "type": "Feature",
       "properties": {
         "name": "Zemědělský svaz ČR",
-        "logo": "2020/05/Lesprojekt.png",
+        "logo": "2020/10/ZemedelskySvazCR.png",
         "website": "http://www.zscr.cz/"
       },
       "geometry": { "type": "Point", "coordinates": [14.4360647, 50.0868222] }
