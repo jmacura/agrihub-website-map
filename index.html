@@ -24,13 +24,13 @@
       return new ol.style.Style({
         image: new ol.style.Circle({
           fill: new ol.style.Fill({
-            color: 'rgba(128, 128, 255, 0.2)',
+            color: '#32a4c9',
           }),
           stroke: new ol.style.Stroke({
-            color: '#32a4c9',
-            width: 4,
+            color: '#000000',
+            width: 0.5,
           }),
-          radius: 6,
+          radius: 7,
         }),
       });
     }
@@ -63,7 +63,7 @@
             removable: false
           }),
           new ol.layer.Vector({
-            title: 'Members',
+            title: 'Členové',
             style: styleFunction,
             popUp: {
               attributes: [
