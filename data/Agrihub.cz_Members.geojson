@@ -32,6 +32,15 @@
         "website": "http://www.zscr.cz/"
       },
       "geometry": { "type": "Point", "coordinates": [14.4360647, 50.0868222] }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Výzkumný ústav rostlinné výroby, v.v.i.",
+        "logo": "2020/10/VURVvvi.png",
+        "website": "https://www.vurv.cz/"
+      },
+      "geometry": { "type": "Point", "coordinates": [14.3020897, 50.0864797] }
     }
   ]
 }
